@@ -95,11 +95,11 @@ export class ThreeSixtyComponent implements OnInit, OnChanges {
      * @inheritDoc
      */
     public ngOnInit() {
-        this.threeSixty = this.threeSixtyFactory.create(this.canvasElement.nativeElement, this.getThreeSixtyConfiguration());
-
-        this.threeSixty.initialize(this.images, this.startAngle);
-
-        this.preloadImages();
+        if(this.canvasElement != undefined){
+            this.threeSixty = this.threeSixtyFactory.create(this.canvasElement.nativeElement, this.getThreeSixtyConfiguration());    
+            this.threeSixty.initialize(this.images, this.startAngle);    
+            this.preloadImages();
+        }
     }
 
     /**
